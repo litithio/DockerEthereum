@@ -14,7 +14,8 @@ RUN geth --datadir="./node"  init Genesis.json && \
 	rm -rf formatADDPEER.py && \
 	echo "personal.newAccount('asd')" | geth attach ipc:./node/geth.ipc  
 
-CMD	cp nodeinfo.txt /home/root/ethereum/share2/node1.txt && \
+
+CMD cp nodeinfo.txt /home/root/ethereum/share2/node1.txt && \
 	pm2 start node1.sh  && \
 	cd eth-net-intelligence-api && \
 	pm2 start app.json && \
