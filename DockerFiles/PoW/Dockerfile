@@ -22,7 +22,7 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 		cd explorer && \
 		npm install 
 #6.Eth-net-Api
-	RUN git clone https://github.com/ethereum/eth-net-intelligence-api && \
+	RUN git clone https://github.com/litithio/eth-net-intelligence-api && \
 		cd eth-net-intelligence-api && \
 		npm install 
 
