@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 COPY /files/* ./
 
 RUN     chmod 777 start.sh && \
-	git clone https://github.com/cubedro/eth-netstats && \
+	    git clone https://github.com/ethereum/eth-netstats && \
         cd eth-netstats && \
         npm install && \
         npm install -g grunt-cli && \

@@ -6,6 +6,8 @@ services:
     build:
       context: ./DockerFiles/base
       dockerfile: Dockerfile
+    environment:
+      - "TS=Europe/Berlin"
     image: img_leanbase
   ethstat:
     depends_on:

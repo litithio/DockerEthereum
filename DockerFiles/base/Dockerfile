@@ -2,10 +2,10 @@ FROM ubuntu:latest
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 ENV LANG C.UTF-8
 COPY /files/* /usr/local/bin/
-RUN apt-get update && apt-get install -y apt-transport-https \
+RUN apt-get update && \
     apt-get update && apt full-upgrade -y && \
     apt-get install -y -q --no-install-recommends \
-                        python-pip \
+                        python3-pip \
                         tmux \
                         nano \
                         software-properties-common \
@@ -19,9 +19,9 @@ RUN apt-get update && apt-get install -y apt-transport-https \
                         wget \
                         telnet \
                         netcat \
-			python-setuptools \
+			            python-setuptools \
                         net-tools && \
-    pip install tmuxp
+                        pip install tmuxp
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 12.18.0
