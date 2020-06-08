@@ -2,8 +2,9 @@ FROM ubuntu:latest
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 ENV LANG C.UTF-8
 COPY /files/* /usr/local/bin/
-RUN apt update && apt full-upgrade -y && \
-    apt install -y -q --no-install-recommends \
+RUN apt-get update && apt-get install -y apt-transport-https \
+    apt-get update && apt full-upgrade -y && \
+    apt-get install -y -q --no-install-recommends \
                         python-pip \
                         tmux \
                         nano \
@@ -23,7 +24,7 @@ RUN apt update && apt full-upgrade -y && \
     pip install tmuxp
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 8.11.3
+ENV NODE_VERSION 12.18.0
 
 WORKDIR $NVM_DIR
 
