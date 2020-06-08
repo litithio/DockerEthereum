@@ -4,8 +4,6 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
 
-
-
 # 2.Ethereum
 	RUN add-apt-repository -y ppa:ethereum/ethereum && \
 		apt-get install ethereum  -y  && \
@@ -20,7 +18,7 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
 #5.Explorer install
-	RUN git clone https://github.com/lrawiczNC/explorer.git  && \
+	RUN git clone https://github.com/litithio/explorer.git  && \
 		cd explorer && \
 		npm install 
 #6.Eth-net-Api

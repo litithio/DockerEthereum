@@ -1,6 +1,7 @@
 FROM ubuntu:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 ENV LANG C.UTF-8
+ARG DEBIAN_FRONTEND=noninteractive
 COPY /files/* /usr/local/bin/
 RUN apt-get update && \
     apt-get update && apt full-upgrade -y && \
@@ -21,7 +22,7 @@ RUN apt-get update && \
                         netcat \
 			            python-setuptools \
                         net-tools && \
-                        pip install tmuxp
+                        pip3 install tmuxp
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 12.18.0

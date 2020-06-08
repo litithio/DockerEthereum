@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - "TS=Europe/Berlin"
+      - DEBIAN_FRONTEND=noninteractive
     image: img_leanbase
   ethstat:
     depends_on:
@@ -16,6 +17,9 @@ services:
     build:
       context: ./DockerFiles/ethstat
       dockerfile: Dockerfile
+    environment:
+        - "TS=Europe/Berlin"
+        - DEBIAN_FRONTEND=noninteractive
     image: img_ethstat
     #networks:
        # you may set custom IP addresses
@@ -35,6 +39,9 @@ services:
       context: ./DockerFiles/PoW
       dockerfile: Dockerfile
     image: img_pow
+    environment:
+      - "TS=Europe/Berlin"
+      - DEBIAN_FRONTEND=noninteractive
   node1:
     container_name: Node1
     depends_on:
@@ -43,6 +50,9 @@ services:
       context: ./DockerFiles/PoW/Node1
       dockerfile: Dockerfile
     image: img_node1
+    environment:
+      - "TS=Europe/Berlin"
+      - DEBIAN_FRONTEND=noninteractive
     ports:
      - "127.0.0.1:8545:8545"
      - "172.18.0.1:8545:8545" #rpcPort
@@ -59,6 +69,9 @@ services:
     build:
       context: ./DockerFiles/PoW/Node2
       dockerfile: Dockerfile
+    environment:
+        - "TS=Europe/Berlin"
+        - DEBIAN_FRONTEND=noninteractive
     image: img_node2
     ports:
      - "172.18.0.1:8555:8555"
