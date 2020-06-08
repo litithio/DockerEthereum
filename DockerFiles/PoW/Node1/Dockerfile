@@ -10,7 +10,7 @@ RUN geth --datadir="./node"  init Genesis.json && \
 	pm2 start node1.sh && \
 	sleep 4 && \
 	echo "admin.nodeInfo.enode" | geth attach ipc:./node/geth.ipc  > nodeinfo.txt  && \
-	python formatADDPEER.py && \
+	python3 formatADDPEER.py && \
 	rm -rf formatADDPEER.py && \
 	echo "personal.newAccount('asd')" | geth attach ipc:./node/geth.ipc  
 
